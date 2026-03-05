@@ -25,7 +25,7 @@ public class OrderItem {
     @JacksonXmlProperty(localName = "orderItemId")
     private UUID orderItemId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(
             name = "order_id",
             nullable = false,
@@ -34,7 +34,7 @@ public class OrderItem {
     @JacksonXmlProperty(localName = "order")
     private Orders order;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(
             name = "product_id",
             nullable = false,
