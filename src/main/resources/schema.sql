@@ -4,7 +4,8 @@ CREATE TABLE IF NOT EXISTS tb_user (
     email VARCHAR(255),
     phone VARCHAR(255),
     address VARCHAR(255),
-    role VARCHAR(255)
+    role VARCHAR(255),
+    password VARCHAR(255)
 );
 
 CREATE TABLE IF NOT EXISTS tb_order (

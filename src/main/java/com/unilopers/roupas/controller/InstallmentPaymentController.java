@@ -31,7 +31,7 @@ public class InstallmentPaymentController {
     }
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_XML_VALUE)
-    public ResponseEntity<InstallmentPayment> getById(@PathVariable Long id) {
+    public ResponseEntity<InstallmentPayment> getById(@PathVariable String id) {
         Optional<InstallmentPayment> payment = repository.findById(id);
         return payment.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
@@ -42,16 +42,16 @@ public class InstallmentPaymentController {
     }
 
     @PutMapping(value = "/{id}", produces = MediaType.APPLICATION_XML_VALUE)
-    public ResponseEntity<InstallmentPayment> update(@PathVariable Long id, @RequestBody InstallmentPayment payment) {
+    public ResponseEntity<InstallmentPayment> update(@PathVariable String id, @RequestBody InstallmentPayment payment) {
         if (!repository.existsById(id)) {
             return ResponseEntity.notFound().build();
         }
-        payment.setId(id.toString());
+        payment.setId(id);
         return ResponseEntity.ok(repository.save(payment));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id) {
+    public ResponseEntity<Void> delete(@PathVariable String id) {
         if (!repository.existsById(id)) {
             return ResponseEntity.notFound().build();
         }

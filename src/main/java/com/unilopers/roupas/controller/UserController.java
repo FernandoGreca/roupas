@@ -73,7 +73,11 @@ public class UserController {
     )
     public ResponseEntity<?> readById(@PathVariable UUID id) {
         try {
-            User entity = userRepository.getReferenceById(id);
+            User entity = userRepository.findById(id)
+                    .orElse(null);
+            if (entity == null) {
+                return new ResponseEntity<>("Usuário não encontrado", HttpStatus.NOT_FOUND);
+            }
             return ResponseEntity.ok().body(entity);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
@@ -89,10 +93,15 @@ public class UserController {
     )
     public ResponseEntity<?> update(@PathVariable UUID id, @RequestBody User user) {
         try {
-            User entity = userRepository.getReferenceById(id);
+            User entity = userRepository.findById(id)
+                    .orElse(null);
+            if (entity == null) {
+                return new ResponseEntity<>("Usuário não encontrado", HttpStatus.NOT_FOUND);
+            }
             entity.setName(user.getName());
             entity.setEmail(user.getEmail());
             entity.setPhone(user.getPhone());
+            entity.setAddress(user.getAddress());
             entity.setRole(user.getRole());
             userRepository.save(entity);
             return ResponseEntity.ok().body(entity);

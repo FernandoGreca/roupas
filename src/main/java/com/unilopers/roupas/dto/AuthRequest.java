@@ -1,0 +1,18 @@
+package com.unilopers.roupas.dto;
+
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@JacksonXmlRootElement(localName = "authRequest")
+public class AuthRequest {
+
+    private String email;
+    private String password;
+}
