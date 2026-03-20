@@ -1,0 +1,9 @@
+Count,Message,Traceback,Nodes
+1693,No tasks defined on AuthenticatedUser. Use the @task decorator or set the 'tasks' attribute of the User (or mark it as abstract = True if you only intend to subclass it),"  File ""C:\Users\a930327\OneDrive - ATOS\Documents\Docs Igor\roupas2026\load-tests\.venv\Lib\site-packages\locust\user\task.py"", line 357, in run
+    self.schedule_task(self.get_next_task())
+                       ~~~~~~~~~~~~~~~~~~^^
+  File ""C:\Users\a930327\OneDrive - ATOS\Documents\Docs Igor\roupas2026\load-tests\.venv\Lib\site-packages\locust\user\task.py"", line 501, in get_next_task
+    raise Exception(
+        f""No tasks defined on {self.user.__class__.__name__}{extra_message} Use the @task decorator or set the 'tasks' attribute of the User (or mark it as abstract = True if you only intend to subclass it)""
+    )
+",local
