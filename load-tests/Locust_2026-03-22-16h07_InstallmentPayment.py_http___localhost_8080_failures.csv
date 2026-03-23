@@ -1,0 +1,7 @@
+Method,Name,Error,Occurrences
+POST,POST /auth/login,"ConnectionRefusedError(10061, '[WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.')",11684
+POST,POST /installment-payments,CatchResponseError('Status inesperado 401 | body=Authentication token is missing or invalid.'),1
+GET,GET /installment-payments,"ConnectionRefusedError(10061, '[WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.')",2
+GET,GET /installment-payments,ChunkedEncodingError(ProtocolError('Response ended prematurely')),1
+GET,GET /installment-payments,HTTPError('401 Client Error:  for url: GET /installment-payments'),13
+GET,GET /installment-payments/{id},HTTPError('401 Client Error:  for url: GET /installment-payments/{id}'),10

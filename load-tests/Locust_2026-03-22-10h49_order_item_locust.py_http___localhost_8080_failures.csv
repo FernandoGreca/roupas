@@ -1,0 +1,4 @@
+Method,Name,Error,Occurrences
+POST,/auth/login,"ConnectionRefusedError(10061, '[WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.')",1802
+GET,GET /api/orderitem/all,"ConnectionRefusedError(10061, '[WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.')",1083
+GET,GET /api/orderitem/by-order,"ConnectionRefusedError(10061, '[WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.')",656
